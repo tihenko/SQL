@@ -1,0 +1,52 @@
+ -- SELECT * FROM students;
+
+-- SELECT * FROM students where age = 15;
+
+-- SELECT * FROM students where name = 'Dima';
+
+-- SELECT name, age FROM students where name = 'Dima';
+
+-- SELECT * FROM students where name like 'RO%';
+ 
+-- SELECT * FROM students where name like 'o%';
+ 
+-- SELECT * FROM students where name like '%a';
+ 
+-- SELECT * FROM students where name like '___a%';
+
+-- SELECT * FROM students order by age;
+-- SELECT * FROM students order by age desc;
+-- SELECT * FROM students order by name desc;
+
+-- SELECT * FROM students where gender like 'f%' order by age desc;
+
+-- SELECT * FROM students where age > 18;
+-- SELECT * FROM students where age < 18;
+-- SELECT * FROM students where age != 18;
+-- SELECT * FROM students where age >= 18 order by age;
+-- SELECT * FROM students where age >= 18 and gender like 'f%' order by name;
+
+-- SELECT * FROM students where name like '%a' or age = 18;
+
+-- SELECT * FROM students where age = 18 or name like 'o%' and gender like 'f%';
+-- SELECT * FROM students where age between 10 and 31;
+
+-- SELECT * FROM students where age in (18, 25, 31);
+-- SELECT * FROM students where name in ('Roman', 'Dima', 'Olga');
+ 
+ -- SELECT min(age) from students;
+ -- SELECT avg(age) from students;
+-- SELECT count(age) from students where gender = 'male';
+--  SELECT sum(age) from students;
+ 
+--  SELECT avg(rating) as avgRat, 
+--  count(rating) as ratingCount
+--  FROM ratings 
+--  where student_id = 5;
+--  
+--  select * from students order by age limit 3 offset 3;
+
+ select * from students 
+ where age = (select max(age) from students);
+
+-- select id, name, gender from students where max(age);
